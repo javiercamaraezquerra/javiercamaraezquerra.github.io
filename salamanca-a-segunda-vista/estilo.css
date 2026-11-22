@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light;
+  --piedra: #f7f3e8;
+  --tinta: #26362e;
+  --hoja: #365646;
+  --oro: #e7bc69;
+  --borde: #c9c6b6;
+  font-family: system-ui, sans-serif;
+  line-height: 1.65;
+  color: var(--tinta);
+  background: var(--piedra);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.contenedor { width: min(100% - 3rem, 67rem); margin-inline: auto; }
+a { color: var(--hoja); text-underline-offset: .2em; }
+a:focus-visible { outline: 3px solid #b3710d; outline-offset: 4px; }
+.salto { position: absolute; transform: translateY(-160%); background: white; padding: .5rem; }
+.salto:focus { transform: none; }
+header, footer { padding-block: 1rem; }
+header { border-bottom: 1px solid var(--borde); }
+.barra, nav { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1.5rem; }
+.barra { justify-content: space-between; }
+.firma { color: inherit; font: 600 1.17rem Georgia, serif; text-decoration: none; }
+nav { font-size: .94rem; }
+[aria-current="page"] { color: var(--tinta); text-decoration-thickness: .14em; }
+.portada { background: var(--tinta); color: var(--piedra); }
+.presentacion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(9rem, 25vw, 18rem);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+.presentacion img { width: 100%; height: auto; display: block; }
+.portada a { color: var(--oro); }
+.entrada { margin: 1.2rem 0 1.45rem; max-width: 35em; font-size: clamp(1.05rem, 2vw, 1.25rem); }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; text-wrap: balance; }
+h1 { margin: 0; font-size: clamp(2.5rem, 5.8vw, 4.55rem); line-height: 1.06; letter-spacing: -.035em; }
+h2 { font-size: clamp(1.45rem, 3vw, 2rem); margin: 0 0 .45rem; line-height: 1.16; }
+.fichas { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem 3.2rem; padding-block: 2.85rem; }
+.fichas p, .articulo p { margin: .55rem 0 .9rem; }
+.articulo { margin-inline: auto; width: min(100% - 3rem, 43rem); padding-block: clamp(2.8rem, 6vw, 5rem); }
+.articulo h1 { margin-bottom: 1.4rem; }
+.articulo h2 { margin-top: 2rem; }
+.articulo li + li { margin-top: .5rem; }
+footer { border-top: 1px solid var(--borde); }
+footer p { margin: 0; }
+@media (max-width: 42rem) {
+  .contenedor, .articulo { width: calc(100% - 2rem); }
+  .presentacion { grid-template-columns: 1fr; gap: 1rem; }
+  .presentacion img { grid-row: 1; width: 5.75rem; }
+  .fichas { grid-template-columns: 1fr; padding-block: 2rem; }
+}
